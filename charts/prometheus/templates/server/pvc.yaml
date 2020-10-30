@@ -11,6 +11,9 @@ metadata:
   {{- end }}
   labels:
     {{- include "prometheus.server.labels" . | nindent 4 }}
+{{- range $key, $value := .Values.server.persistentVolume.extraLabels }}
+    {{ $key }}: {{ $value }}
+{{- end }}
   name: {{ template "prometheus.server.fullname" . }}
 {{ include "prometheus.namespace" . | indent 2 }}
 spec:
