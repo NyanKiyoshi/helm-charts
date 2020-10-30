@@ -1,4 +1,4 @@
-name: Release Charts - Fork
+name: Release Charts
 
 on:
   push:
